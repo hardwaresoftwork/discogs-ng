@@ -5,34 +5,25 @@
 
 (function(){
 
-  var timelineControllers = angular.module('timelineControllers', []);
+  var DiscogsControllers = angular.module('DiscogsControllers', []);
 
   // example user
-  timelineControllers.value('user', {
-    name: 'bnzlovesyou',
-    firstname: '',
-    url: 'http://soundcloud.com/bnzlovesyou',
-    id: 1672444,
-    trackid: 13158665,
-    playlistid: 751573,
-    groupid: 28743,
-    commentid: 211972068,
-    genre: 'house'
+  DiscogsControllers.value('user', {
+    username: 'bnz'
   });
 
-  timelineControllers.controller('HomeCtrl', ['$scope', '$routeParams', 'Discogs', '$location', 'user',
+  DiscogsControllers.controller('HomeCtrl', ['$scope', '$routeParams', 'Discogs', '$location', 'user',
   function($scope, $routeParams, Discogs, $location, user) {
 
     $scope.project = {
       title: 'SourSound',
     };
 
-
     Discogs.getUser('bnz')
     .then(
       function( response ) {
-        $scope.user = response;
-        console.log($scope.user);
+        $scope.duser = response;
+        console.log($scope.duser);
       }
     );
 
