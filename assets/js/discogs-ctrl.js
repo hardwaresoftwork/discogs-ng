@@ -30,8 +30,8 @@
     Discogs.getMarketitemsByUsername('bnz')
     .then(
       function( response ) {
-        $scope.userdata = response;
-        console.log($scope.userdata);
+        $scope.marketitems = response;
+        console.log($scope.marketitems);
       }
     );
 
