@@ -1,9 +1,9 @@
 /**
-* SOURSOUND
-* AngularJS Service for SoundCloud
+* DISCOGS
+* AngularJS Service for Discogs
 *
 * Created by Erik Woitschig on 03/07/15.
-* http://soursound.bnz-power.com
+* http://iambnz.github.io/discogs-ng/
 * http://twitter.com/devbnz
 
 */
@@ -18,8 +18,15 @@
     var baseUrl = 'https://api.discogs.com';
     // Return public API.
     return({
-
+      // User Identity
       getUser : getUser,
+      getUserSubmissions : getUserSubmissions,
+      getUserContributions : getUserContributions,
+
+      // User Wantlist
+      getUserWantlist : getUserWantlist,
+
+      // Marketplace
       getMarketitemsByUsername : getMarketitemsByUsername
     });
 
@@ -29,6 +36,39 @@
       var request = $http({
         method: "get",
         url: baseUrl + "/users/" + username
+      });
+
+      return( request.then( handleSuccess, handleError ) );
+
+    }
+
+    function getUserSubmissions(username) {
+
+      var request = $http({
+        method: "get",
+        url: baseUrl + "/users/" + username + "/contributions"
+      });
+
+      return( request.then( handleSuccess, handleError ) );
+
+    }
+
+    function getUserContributions(username) {
+
+      var request = $http({
+        method: "get",
+        url: baseUrl + "/users/" + username + "/contributions"
+      });
+
+      return( request.then( handleSuccess, handleError ) );
+
+    }
+
+    function getUserWantlist(username) {
+
+      var request = $http({
+        method: "get",
+        url: baseUrl + "/users/" + username + "/wants"
       });
 
       return( request.then( handleSuccess, handleError ) );
