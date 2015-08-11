@@ -19,7 +19,7 @@
       title: 'SourSound',
     };
 
-    Discogs.getUser('bnz')
+    Discogs.getUser(user.username)
     .then(
       function( response ) {
         $scope.duser = response;
@@ -39,5 +39,36 @@
 
     }
     ]);
+
+    DiscogsControllers.controller('UserCtrl', ['$scope', '$routeParams', 'Discogs', '$location',
+    function($scope, $routeParams, Discogs, $location) {
+
+      $scope.project = {
+        title: 'SourSound',
+      };
+
+      var username = $routeParams.username;
+
+      Discogs.getUser(username)
+      .then(
+        function( response ) {
+          $scope.duser = response;
+          console.log($scope.duser);
+        }
+      );
+
+      Discogs.getMarketitemsByUsername(username)
+      .then(
+        function( response ) {
+          $scope.marketitems = response;
+          console.log($scope.marketitems);
+        }
+      );
+
+
+
+    }
+    ]);
+
 
 })();

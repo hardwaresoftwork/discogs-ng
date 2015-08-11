@@ -12,7 +12,10 @@ function($routeProvider) {
     templateUrl: 'views/start.html',
     controller: 'HomeCtrl'
   }).
-
+  when('/user/:username', {
+    templateUrl: 'views/start.html',
+    controller: 'UserCtrl'
+  }).
 otherwise({
   redirectTo: '/home'
 });
