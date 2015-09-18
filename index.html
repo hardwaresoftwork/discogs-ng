@@ -22,12 +22,7 @@
     <meta name="msapplication-TileColor" content="#3372DF">
     -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 
-    <!--
-    <link rel="stylesheet" href="material.min.css">
-    -->
     <!-- Angular Material Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
@@ -38,9 +33,12 @@
     <script src="assets/js/discogs-ng.js"></script>
     <script src="assets/js/discogs-ctrl.js"></script>
     <script src="assets/js/discogs-app.js"></script>
+    <script src="assets/js/ga.js"></script>
 
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.indigo-pink.min.css">
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.indigo-pink.min.css">
+    <!-- throws error with ng-href - TODO
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js"></script>
+    -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -67,78 +65,49 @@
           <h4>AngularJS 1.x Service for Discogs</h4>
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
-          <a href="#features" class="mdl-layout__tab">Methods</a>
-          <a href="#features" class="mdl-layout__tab">Examples</a>
-          <a href="#features" class="mdl-layout__tab">Contact</a>
-          <!--
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
-            <i class="material-icons" role="presentation">add</i>
-            <span class="visuallyhidden">Add</span>
-          </button>
-        -->
-        </div>
+          <a ng-href="#/home" class="mdl-layout__tab is-active">Overview</a>
+          <a ng-href="#/features" class="mdl-layout__tab">Methods</a>
+          <a ng-href="#/example" class="mdl-layout__tab">Example</a>
+          </div>
       </header>
       <main class="mdl-layout__content">
 
         <div ng-view>
-
-
         </div>
-
-
-
 
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Features</h1>
+              <h1 class="mdl-mega-footer--heading">more AngularJS 1.x services</h1>
               <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Updates</a></li>
+                <li><a href="#">SourSound for Soundcloud</a></li>
+                <li><a href="#">github-ng for Github</a></li>
               </ul>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Details</h1>
+              <h1 class="mdl-mega-footer--heading">Discogs</h1>
               <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Spec</a></li>
-                <li><a href="#">Tools</a></li>
-                <li><a href="#">Resources</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Technology</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Patterns</a></li>
-                <li><a href="#">Usage</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contracts</a></li>
+                <li><a href="#">API Docs</a></li>
+                <li><a href="https://www.discogs.com" target="_blank">Website</a></li>
               </ul>
             </div>
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
               <h1 class="mdl-mega-footer--heading">FAQ</h1>
               <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Questions</a></li>
-                <li><a href="#">Answers</a></li>
-                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Issues</a></li>
               </ul>
             </div>
           </div>
           <div class="mdl-mega-footer--bottom-section">
             <div class="mdl-logo">
-              More Information
+              Contact
             </div>
             <ul class="mdl-mega-footer--link-list">
-              <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="http://bnz-power.com">Web</a></li>
+              <li><a href="https://twitter.com/devbnz">Twitter</a></li>
             </ul>
           </div>
         </footer>

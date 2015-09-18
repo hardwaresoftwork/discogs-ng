@@ -12,6 +12,14 @@ function($routeProvider) {
     templateUrl: 'views/start.html',
     controller: 'HomeCtrl'
   }).
+  when('/features', {
+    templateUrl: 'views/features.html',
+    controller: 'FeaturesCtrl'
+  }).
+  when('/example', {
+    templateUrl: 'views/example.html',
+    controller: 'ExampleCtrl'
+  }).
   when('/user/:username', {
     templateUrl: 'views/start.html',
     controller: 'UserCtrl'
