@@ -34,14 +34,10 @@ SourSoundApp.factory('myGoogleAnalytics', [
   function ($rootScope, $window, $location) {
 
     var myGoogleAnalytics = {};
-    console.log('yo');
-    /**
-     * Set the page to the current location path
-     * and then send a pageview to log path change.
-     */
+    
     myGoogleAnalytics.sendPageview = function() {
       if ($window.ga) {
-        $window.ga('set', 'page', 'discogs-ng' + $location.path());
+        $window.ga('set', 'page', $location.path());
         $window.ga('send', 'pageview');
       }
     }
