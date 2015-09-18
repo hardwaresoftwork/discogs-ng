@@ -41,7 +41,7 @@ SourSoundApp.factory('myGoogleAnalytics', [
      */
     myGoogleAnalytics.sendPageview = function() {
       if ($window.ga) {
-        $window.ga('set', 'page', $location.path());
+        $window.ga('set', 'page', 'discogs-ng' + $location.path());
         $window.ga('send', 'pageview');
       }
     }
