@@ -1,0 +1,49 @@
+<div class="mdl-layout__tab-panel is-active" id="overview">
+ <br/><br/>
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+      <!--<i class="material-icons">play_circle_filled</i>-->
+      <img src="{{duser.avatar_url}}" width="200px" height="200px" />
+    </header>
+    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+      <div class="mdl-card__supporting-text">
+        <h4>{{duser.username}}</h4>
+          {{duser.name}}
+    </div>
+      <div class="mdl-card__actions">
+        <a href="{{duser.home_page}}" target="_blank" class="mdl-button">My website</a>
+        <a href="{{duser.uri}}" target="_blank" class="mdl-button">On Discogs</a>
+        <a class="mdl-button">Collection ({{duser.num_collection}})</a>
+        <a class="mdl-button">Wantlist ({{duser.num_wantlist}})</a>
+      </div>
+    </div>
+  </section>
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+        <h4 class="mdl-cell mdl-cell--12-col">Marketitems</h4>
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">Record</th>
+      <th>Condition</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in marketitems.listings">
+      <td class="mdl-data-table__cell--non-numeric">{{item.release.description}}</td>
+      <td>{{item.condition}}</td>
+      <td>{{item.price.value}} {{item.price.currency}}</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+      <div class="mdl-card__actions">
+        <a class="mdl-button">YO!</a>
+      </div>
+    </div>
+  </section>
+<br/><br/>
+</div>
