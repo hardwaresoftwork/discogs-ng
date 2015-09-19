@@ -34,7 +34,7 @@ SourSoundApp.factory('myGoogleAnalytics', [
   function ($rootScope, $window, $location) {
 
     var myGoogleAnalytics = {};
-    var repoLocation = 'discogs-ng/#/';
+    var repoLocation = 'discogs-ng/#';
 
     myGoogleAnalytics.sendPageview = function() {
       if ($window.ga) {
